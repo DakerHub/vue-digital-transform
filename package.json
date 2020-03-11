@@ -2,14 +2,14 @@
   "name": "vue-digital-transform",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/vue-digital-transform.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-digital-transform './src/components/DigitalTransform.vue'",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
