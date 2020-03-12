@@ -253,11 +253,25 @@ fieldset {
     align-items: center;
     height: unset;
   }
-  .ctrl .ctrl-item label {
-    width: 80px;
-  }
+  .ctrl .ctrl-item {
+    flex-wrap: wrap;
+    label {
+      width: 100%;
+      text-align: left;
+    }
+    input:not([type="checkbox"]) {
+      width: 100%;
+      margin: 0;
+    }
 
-  .ctrl button {
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  .demo {
+    padding: 5px 0;
+    border: none;
   }
 }
 </style>
