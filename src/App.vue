@@ -28,8 +28,7 @@
         vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。
       </div>
       <h2>尝试修改值</h2>
-      <fieldset>
-        <legend>Demo</legend>
+      <div class="demo-box">
         <div class="ctrl">
           <div class="ctrl-item">
             <label for="">错乱切换：</label>
@@ -37,11 +36,11 @@
           </div>
           <div class="ctrl-item">
             <label for="">转换间隔：</label>
-            <input type="text" v-model.number="interval" />
+            <input type="number" v-model.number="interval" />
           </div>
           <div class="ctrl-item">
             <label for="">值：</label>
-            <input type="text" v-model.number="num" />
+            <input type="number" v-model.number="num" />
             <button @click="random">随机</button>
           </div>
         </div>
@@ -54,7 +53,7 @@
 
           <span>这是个inline元素</span>
         </div>
-      </fieldset>
+      </div>
 
       <div>
         <h2>快速开始</h2>
@@ -134,8 +133,7 @@ body {
   margin: 0;
 }
 #app {
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
   font-family: "PingFang SC Regular", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -226,6 +224,11 @@ fieldset {
     }
   }
 }
+.demo-box {
+  box-shadow: 0 0 11px 0px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  border-radius: 4px;
+}
 .demo {
   border: thin solid #ccc;
   padding: 10px 20px;
@@ -236,5 +239,25 @@ fieldset {
   font-size: 30px;
   font-weight: bold;
   color: #4caf50;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  h1 {
+    word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: unset;
+  }
+  .ctrl .ctrl-item label {
+    width: 80px;
+  }
+
+  .ctrl button {
+  }
 }
 </style>
