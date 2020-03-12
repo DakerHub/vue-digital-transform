@@ -12,12 +12,12 @@ npm install vue-digital-transform
 
 ```html
 <template>
-  <DigitalTransform :value="num" :interval="500"></DigitalTransform>
+  <DigitalTransform :value="num" dislocation :interval="200"></DigitalTransform>
 </template>
 ```
 
 ```js
-import DigitalTransform from "./components/DigitalTransform";
+import DigitalTransform from "vue-digital-transform";
 
 export default {
   components: {
@@ -33,8 +33,8 @@ export default {
 
 ## Config
 
-| prop        | type          | description                    | default   |
-| ----------- | ------------- | ------------------------------ | --------- |
-| value       | number,string | -                              | undefined |
-| dislocation | boolean       | 单个数字是否过渡时间是否不一致 | false     |
-| interval    | number        | 单个数字过渡时间（ms）         | 500       |
+| prop        | type          | description                        | default   |
+| ----------- | ------------- | ---------------------------------- | --------- |
+| value       | number,string | 需要切换的数字，只能由 0-9 和.组成 | undefined |
+| dislocation | boolean       | 单个数字是否过渡时间是否不一致     | false     |
+| interval    | number        | 单个数字过渡时间（ms）             | 500       |
