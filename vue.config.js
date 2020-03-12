@@ -3,5 +3,8 @@ module.exports = {
     extract: false
   },
 
-  publicPath: ""
+  publicPath: "",
+  devServer: {
+    host: "localhost"
+  }
 };
