@@ -1,81 +1,84 @@
 <template>
-  <div id="app">
-    <h1>
-      <img src="./assets/vdt.png" alt="vue-digital-transform" />
-      vue-digital-transform
-    </h1>
-    <a class="star-me" href="https://github.com/DakerHub/vue-digital-transform"
-      >GITHUB</a
-    >
-    <div>
-      <a class="shield" href="https://github.com/DakerHub" target="__blank">
+  <div class="container">
+    <div id="app">
+      <h1>
+        <img src="./assets/vdt.png" alt="vue-digital-transform" />
+        vue-digital-transform
+      </h1>
+      <a
+        class="star-me"
+        href="https://github.com/DakerHub/vue-digital-transform"
+        >GITHUB</a
+      >
+      <div>
+        <a class="shield" href="https://github.com/DakerHub" target="__blank">
+          <img
+            src="https://img.shields.io/badge/Github-@DakerHub-success.svg?style=flat-square"
+            alt=""
+          />
+        </a>
+
         <img
-          src="https://img.shields.io/badge/Github-@DakerHub-success.svg?style=flat-square"
+          class="shield"
+          src="https://img.shields.io/badge/version-@1.0.1-success.svg?style=flat-square"
           alt=""
         />
-      </a>
-
-      <img
-        class="shield"
-        src="https://img.shields.io/badge/version-@1.0.1-success.svg?style=flat-square"
-        alt=""
-      />
-    </div>
-    <div class="desc">
-      vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。
-    </div>
-    <h2>尝试修改值</h2>
-    <fieldset>
-      <legend>Demo</legend>
-      <div class="ctrl">
-        <div class="ctrl-item">
-          <label for="">错乱切换：</label>
-          <input type="checkbox" v-model="dislocation" />
-        </div>
-        <div class="ctrl-item">
-          <label for="">转换间隔：</label>
-          <input type="text" v-model.number="interval" />
-        </div>
-        <div class="ctrl-item">
-          <label for="">值：</label>
-          <input type="text" v-model.number="num" />
-          <button @click="random">随机</button>
-        </div>
       </div>
-      <div class="demo">
-        <DigitalTransform
-          :value="num"
-          :interval="interval"
-          :dislocation="dislocation"
-        ></DigitalTransform>
-
-        <span>这是个inline元素</span>
+      <div class="desc">
+        vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。
       </div>
-    </fieldset>
+      <h2>尝试修改值</h2>
+      <fieldset>
+        <legend>Demo</legend>
+        <div class="ctrl">
+          <div class="ctrl-item">
+            <label for="">错乱切换：</label>
+            <input type="checkbox" v-model="dislocation" />
+          </div>
+          <div class="ctrl-item">
+            <label for="">转换间隔：</label>
+            <input type="text" v-model.number="interval" />
+          </div>
+          <div class="ctrl-item">
+            <label for="">值：</label>
+            <input type="text" v-model.number="num" />
+            <button @click="random">随机</button>
+          </div>
+        </div>
+        <div class="demo">
+          <DigitalTransform
+            :value="num"
+            :interval="interval"
+            :dislocation="dislocation"
+          ></DigitalTransform>
 
-    <div>
-      <h2>快速开始</h2>
+          <span>这是个inline元素</span>
+        </div>
+      </fieldset>
 
-      <h3>安装</h3>
-      <pre
-        class="hljs"
-        style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-      >npm <span class="hljs-keyword" style="color: rgb(203, 120, 50);">install</span> vue-digital-transform</pre>
+      <div>
+        <h2>快速开始</h2>
 
-      <h3>使用</h3>
-      <pre
-        class="hljs"
-        style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-      >&lt;DigitalTransform
+        <h3>安装</h3>
+        <pre
+          class="hljs"
+          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
+        >npm <span class="hljs-keyword" style="color: rgb(203, 120, 50);">install</span> vue-digital-transform</pre>
+
+        <h3>使用</h3>
+        <pre
+          class="hljs"
+          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
+        >&lt;DigitalTransform
   <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:value=<span class="hljs-string" style="color: rgb(224, 196, 108);">"number"</span></span>
   <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:interval=<span class="hljs-string" style="color: rgb(224, 196, 108);">"interval"</span></span>
   <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:dislocation=<span class="hljs-string" style="color: rgb(224, 196, 108);">"dislocation"</span></span>
 &gt;&lt;<span class="hljs-regexp" style="color: rgb(104, 150, 186);">/DigitalTransform&gt;</span></pre>
 
-      <pre
-        class="hljs"
-        style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-      ><span class="hljs-keyword" style="color: rgb(203, 120, 50);">import</span> DigitalTransform from <span class="hljs-string" style="color: rgb(224, 196, 108);">"vue-digital-transform"</span>;
+        <pre
+          class="hljs"
+          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
+        ><span class="hljs-keyword" style="color: rgb(203, 120, 50);">import</span> DigitalTransform from <span class="hljs-string" style="color: rgb(224, 196, 108);">"vue-digital-transform"</span>;
 
 export <span class="hljs-keyword" style="color: rgb(203, 120, 50);">default</span> {
   components: {
@@ -89,6 +92,7 @@ export <span class="hljs-keyword" style="color: rgb(203, 120, 50);">default</spa
     };
   }
 }</pre>
+      </div>
     </div>
   </div>
 </template>
@@ -121,13 +125,18 @@ export default {
 </script>
 
 <style lang="scss">
-body {
+.container {
+  position: relative;
   overflow-x: hidden;
+  width: 100vw;
+}
+body {
+  margin: 0;
 }
 #app {
   width: 100vw;
   overflow: hidden;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "PingFang SC Regular", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
