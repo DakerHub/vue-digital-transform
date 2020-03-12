@@ -4,7 +4,9 @@
       <legend>DigitalTransform</legend>
       <input type="text" v-model.number="num" />
       <button @click="random">随机</button>
-      <DigitalTransform :value="num || NaN" :interval="500"></DigitalTransform>
+      <div>
+        <DigitalTransform :value="num" :interval="500"></DigitalTransform>
+      </div>
     </fieldset>
 
     <fieldset>
@@ -58,5 +60,9 @@ fieldset {
 }
 input {
   margin-bottom: 20px;
+}
+
+.digital-transform {
+  font-size: 30px;
 }
 </style>

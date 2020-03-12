@@ -1,13 +1,13 @@
 {
   "name": "vue-digital-transform",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "main": "dist/vue-digital-transform.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-digital-transform './src/components/DigitalTransform.vue'",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "vue": "^2.6.11"
@@ -27,5 +27,12 @@
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DakerHub/vue-digital-transform.git"
+  },
+  "keywords": [],
+  "author": "DakerHub",
+  "license": "MIT"
 }

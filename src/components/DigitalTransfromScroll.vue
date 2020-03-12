@@ -9,9 +9,7 @@
 </template>
 
 <script>
-const digitalValidator = value => {
-  return /^\w{1}|\.$/.test(value);
-};
+import { digitalValidator } from "./helper";
 
 export default {
   name: "DigitalTransformScroll",
@@ -86,6 +84,7 @@ export default {
       const idx = this.digitals.findIndex(d => target === d);
       const offset = idx * this.elHeight;
 
+      if (!this.$refs.$list) return;
       this.$refs.$list.style.transform = `translateY(-${offset}px)`;
     }
   }
@@ -103,7 +102,5 @@ export default {
   flex-direction: column;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.42, 0, 0.62, 1.2);
-}
-.dt-scroll-digital {
 }
 </style>

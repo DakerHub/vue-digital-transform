@@ -1,21 +1,20 @@
 <template>
-  <div class="digital-transform">
-    <transition-group name="slide-y">
-      <DigitalTransfromScroll
-        class="digital-transform-item"
-        v-for="(item, i) in digitals"
-        :key="i"
-        :to="item"
-        :interval="interval"
-        :dislocation="dislocation"
-        from="0"
-        >{{ item }}</DigitalTransfromScroll
-      >
-    </transition-group>
-  </div>
+  <transition-group class="digital-transform" name="vdt-slide-y" tag="div">
+    <DigitalTransfromScroll
+      class="digital-transform-item"
+      v-for="(item, i) in digitals"
+      :key="i"
+      :to="item"
+      :interval="interval"
+      :dislocation="dislocation"
+      from="0"
+      >{{ item }}</DigitalTransfromScroll
+    >
+  </transition-group>
 </template>
 
 <script>
+import { looseDigitalValidator } from "./helper";
 import DigitalTransfromScroll from "./DigitalTransfromScroll";
 
 export default {
@@ -25,7 +24,7 @@ export default {
   },
   props: {
     value: {
-      type: Number,
+      validator: looseDigitalValidator,
       default: undefined,
       required: true
     },
@@ -53,17 +52,11 @@ export default {
     }
   },
   methods: {
-    parseDigital(digital) {
-      if (typeof digital !== "number") {
-        throw new TypeError('"value" should be number');
-      }
-
-      let digitalArr;
-      if (isNaN(digital)) {
-        digitalArr = [];
-      } else {
-        digitalArr = digital.toString().split("");
-      }
+    parseDigital(digitals) {
+      const digitalsStr = digitals.toLocaleString("en-US", {
+        useGrouping: false
+      });
+      const digitalArr = digitalsStr.split("");
 
       this.oldDigtals = this.digitals.concat();
       this.digitals = digitalArr;
@@ -74,19 +67,16 @@ export default {
 
 <style lang="scss" scoped>
 .digital-transform {
-  overflow: hidden;
+  display: inline-flex;
 }
 .digital-transform-item {
   display: inline-block;
   transition: opacity 0.3s, transform 0.3s;
 }
 
-.slide-y-enter, .slide-y-leave-to
-/* .slide-y-leave-active for below version 2.1.8 */ {
+.vdt-slide-y-enter,
+.vdt-slide-y-leave-to {
   opacity: 0;
   transform: translateY(10px);
-}
-.slide-y-leave-active {
-  // position: absolute;
 }
 </style>
