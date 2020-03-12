@@ -1,29 +1,40 @@
 # vue-digital-transform
 
-## Project setup
-```
-yarn install
+一个基于 Vue 的数字切换动效库
+
+## Install
+
+```bash
+npm install vue-digital-transform
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+## Example
+
+```html
+<template>
+  <DigitalTransform :value="num" :interval="500"></DigitalTransform>
+</template>
 ```
 
-### Compiles and minifies for production
-```
-yarn build
+```js
+import DigitalTransform from "./components/DigitalTransform";
+
+export default {
+  components: {
+    DigitalTransform
+  },
+  data() {
+    return {
+      num: 0
+    };
+  }
+};
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
+## Config
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+| prop        | type          | description                    | default   |
+| ----------- | ------------- | ------------------------------ | --------- |
+| value       | number,string | -                              | undefined |
+| dislocation | boolean       | 单个数字是否过渡时间是否不一致 | false     |
+| interval    | number        | 单个数字过渡时间（ms）         | 500       |
