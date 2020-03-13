@@ -4,9 +4,13 @@ export function digitalValidator(value) {
 
 export function looseDigitalValidator(value) {
   if (value === undefined || value === null || value === "") return true;
-  const digitalsStr = value.toLocaleString("en-US", {
-    useGrouping: false
+
+  const numFormat = Intl.NumberFormat("en-US", {
+    useGrouping: false,
+    maximumFractionDigits: 20
   });
+
+  const digitalsStr = numFormat.format(value);
 
   return /^[\d]+([.]{1}[\d]+){0,1}$/.test(digitalsStr);
 }

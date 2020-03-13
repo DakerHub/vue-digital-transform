@@ -8,8 +8,7 @@
       :interval="interval"
       :dislocation="dislocation"
       from="0"
-      >{{ item }}</DigitalTransfromScroll
-    >
+    >{{ item }}</DigitalTransfromScroll>
   </transition-group>
 </template>
 
@@ -53,9 +52,12 @@ export default {
   },
   methods: {
     parseDigital(digitals) {
-      const digitalsStr = digitals.toLocaleString("en-US", {
-        useGrouping: false
+      const numFormat = Intl.NumberFormat("en-US", {
+        useGrouping: false,
+        maximumFractionDigits: 20
       });
+
+      const digitalsStr = numFormat.format(digitals);
       const digitalArr = digitalsStr.split("");
 
       this.oldDigtals = this.digitals.concat();

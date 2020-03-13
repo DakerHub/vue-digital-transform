@@ -1,6 +1,6 @@
 {
   "name": "vue-digital-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "main": "dist/vue-digital-transform.umd.min.js",
   "scripts": {
