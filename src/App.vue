@@ -35,6 +35,10 @@
             <input type="checkbox" v-model="dislocation" />
           </div>
           <div class="ctrl-item">
+            <label for="">分隔符：</label>
+            <input type="checkbox" v-model="useGrouping" />
+          </div>
+          <div class="ctrl-item">
             <label for="">转换间隔：</label>
             <input type="number" v-model.number="interval" />
           </div>
@@ -49,6 +53,7 @@
             :value="num"
             :interval="interval"
             :dislocation="dislocation"
+            :use-grouping="useGrouping"
           ></DigitalTransform>
 
           <span>这是个inline元素</span>
@@ -108,7 +113,8 @@ export default {
     return {
       num: 1000,
       interval: 500,
-      dislocation: false
+      dislocation: false,
+      useGrouping: false
     };
   },
   methods: {

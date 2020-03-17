@@ -34,6 +34,10 @@ export default {
     interval: {
       type: Number,
       default: 500
+    },
+    useGrouping: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -52,12 +56,16 @@ export default {
   },
   methods: {
     parseDigital(digitals) {
-      const numFormat = Intl.NumberFormat("en-US", {
-        useGrouping: false,
-        maximumFractionDigits: 20
-      });
+      let digitalsStr = digitals;
 
-      const digitalsStr = numFormat.format(digitals);
+      if (typeof digitals === "number") {
+        const numFormat = Intl.NumberFormat("en-US", {
+          useGrouping: this.useGrouping,
+          maximumFractionDigits: 20
+        });
+        digitalsStr = numFormat.format(digitals);
+      }
+
       const digitalArr = digitalsStr.split("");
 
       this.oldDigtals = this.digitals.concat();

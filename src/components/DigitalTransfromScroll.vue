@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      digitals: [".", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"],
+      digitals: [",", ".", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"],
       listHeight: 0,
       spacing: 1
     };

@@ -33,8 +33,9 @@ export default {
 
 ## Config
 
-| prop        | type          | description                        | default   |
-| ----------- | ------------- | ---------------------------------- | --------- |
-| value       | number,string | 需要切换的数字，只能由 0-9 和.组成 | undefined |
-| dislocation | boolean       | 单个数字是否过渡时间是否不一致     | false     |
-| interval    | number        | 单个数字过渡时间（ms）             | 500       |
+| prop                  | type          | description                                   | default   |
+| --------------------- | ------------- | --------------------------------------------- | --------- |
+| value                 | number,string | 需要切换的数字，只能由 0-9 . , 组成           | undefined |
+| dislocation           | boolean       | 单个数字是否过渡时间是否不一致                | false     |
+| interval              | number        | 单个数字过渡时间（ms）                        | 500       |
+| useGrouping (v1.1.0+) | boolean       | 是否开启分隔符(对 value 为 Number 类型的有效) | false     |
