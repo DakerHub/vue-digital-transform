@@ -34,7 +34,11 @@
     "type": "git",
     "url": "https://github.com/DakerHub/vue-digital-transform.git"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "vue-component",
+    "digital-animation"
+  ],
   "author": "DakerHub",
   "license": "MIT"
 }

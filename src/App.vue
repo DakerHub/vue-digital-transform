@@ -5,45 +5,41 @@
         <img src="./assets/vdt.png" alt="vue-digital-transform" />
         vue-digital-transform
       </h1>
-      <a
-        class="star-me"
-        href="https://github.com/DakerHub/vue-digital-transform"
-        >GITHUB</a
-      >
+      <a class="star-me" href="https://github.com/DakerHub/vue-digital-transform">GITHUB</a>
       <div>
         <a class="shield" href="https://github.com/DakerHub" target="__blank">
           <img
             src="https://img.shields.io/badge/Github-@DakerHub-success.svg?style=flat-square"
-            alt=""
+            alt
           />
         </a>
 
         <img
           class="shield"
-          src="https://img.shields.io/badge/version-@1.0.1-success.svg?style=flat-square"
-          alt=""
+          :src="
+            `https://img.shields.io/badge/version-@${version}-success.svg?style=flat-square`
+          "
+          alt
         />
       </div>
-      <div class="desc">
-        vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。
-      </div>
+      <div class="desc">vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。</div>
       <h2>尝试修改值</h2>
       <div class="demo-box">
         <div class="ctrl">
           <div class="ctrl-item">
-            <label for="">错乱切换：</label>
+            <label for>错乱切换：</label>
             <input type="checkbox" v-model="dislocation" />
           </div>
           <div class="ctrl-item">
-            <label for="">分隔符：</label>
+            <label for>分隔符：</label>
             <input type="checkbox" v-model="useGrouping" />
           </div>
           <div class="ctrl-item">
-            <label for="">转换间隔：</label>
+            <label for>转换间隔：</label>
             <input type="number" v-model.number="interval" />
           </div>
           <div class="ctrl-item">
-            <label for="">值：</label>
+            <label for>值：</label>
             <input type="number" v-model.number="num" />
             <button @click="random">随机</button>
           </div>
@@ -60,57 +56,29 @@
         </div>
       </div>
 
-      <div>
-        <h2>快速开始</h2>
+      <DocExample></DocExample>
 
-        <h3>安装</h3>
-        <pre
-          class="hljs"
-          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-        >npm <span class="hljs-keyword" style="color: rgb(203, 120, 50);">install</span> vue-digital-transform</pre>
-
-        <h3>使用</h3>
-        <pre
-          class="hljs"
-          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-        >&lt;DigitalTransform
-  <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:value=<span class="hljs-string" style="color: rgb(224, 196, 108);">"number"</span></span>
-  <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:interval=<span class="hljs-string" style="color: rgb(224, 196, 108);">"interval"</span></span>
-  <span class="hljs-symbol" style="color: rgb(224, 196, 108);">:dislocation=<span class="hljs-string" style="color: rgb(224, 196, 108);">"dislocation"</span></span>
-&gt;&lt;<span class="hljs-regexp" style="color: rgb(104, 150, 186);">/DigitalTransform&gt;</span></pre>
-
-        <pre
-          class="hljs"
-          style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(43, 43, 43); color: rgb(186, 186, 186);"
-        ><span class="hljs-keyword" style="color: rgb(203, 120, 50);">import</span> DigitalTransform from <span class="hljs-string" style="color: rgb(224, 196, 108);">"vue-digital-transform"</span>;
-
-export <span class="hljs-keyword" style="color: rgb(203, 120, 50);">default</span> {
-  components: {
-    DigitalTransform
-  },
-  data() {
-    return {
-      number: <span class="hljs-number" style="color: rgb(104, 150, 186);">1000</span>,
-      interval: <span class="hljs-number" style="color: rgb(104, 150, 186);">500</span>,
-      dislocation: false
-    };
-  }
-}</pre>
-      </div>
+      <DocConfig></DocConfig>
     </div>
   </div>
 </template>
 
 <script>
 import DigitalTransform from "./components/DigitalTransform";
+import DocExample from "./docs/Example";
+import DocConfig from "./docs/Config";
+import config from "./../package.json";
 
 export default {
   name: "App",
   components: {
-    DigitalTransform
+    DigitalTransform,
+    DocExample,
+    DocConfig
   },
   data() {
     return {
+      version: config.version,
       num: 1000,
       interval: 500,
       dislocation: false,
@@ -134,6 +102,7 @@ export default {
   position: relative;
   overflow-x: hidden;
   width: 100vw;
+  margin-bottom: 50px;
 }
 body {
   margin: 0;
