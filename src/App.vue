@@ -5,7 +5,11 @@
         <img src="./assets/vdt.png" alt="vue-digital-transform" />
         vue-digital-transform
       </h1>
-      <a class="star-me" href="https://github.com/DakerHub/vue-digital-transform">GITHUB</a>
+      <a
+        class="star-me"
+        href="https://github.com/DakerHub/vue-digital-transform"
+        >GITHUB</a
+      >
       <div>
         <a class="shield" href="https://github.com/DakerHub" target="__blank">
           <img
@@ -22,7 +26,9 @@
           alt
         />
       </div>
-      <div class="desc">vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。</div>
+      <div class="desc">
+        vue-digital-transform基于vue2.x，致力于数字之间的动画切换动效，让数字的变换不再枯燥，让用户体验数字变化所带来的的乐趣。
+      </div>
       <h2>尝试修改值</h2>
       <div class="demo-box">
         <div class="ctrl">
@@ -56,6 +62,8 @@
         </div>
       </div>
 
+      <ClockDemo></ClockDemo>
+
       <DocExample></DocExample>
 
       <DocConfig></DocConfig>
@@ -66,6 +74,7 @@
 <script>
 import DigitalTransform from "./components/DigitalTransform";
 import DocExample from "./docs/Example";
+import ClockDemo from "./docs/Clock";
 import DocConfig from "./docs/Config";
 import config from "./../package.json";
 
@@ -74,7 +83,8 @@ export default {
   components: {
     DigitalTransform,
     DocExample,
-    DocConfig
+    DocConfig,
+    ClockDemo
   },
   data() {
     return {
