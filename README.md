@@ -1,6 +1,15 @@
 # vue-digital-transform
 
-一个基于 Vue 的数字切换动效库
+<img src="./assets/logo.jpg" style="width:100px;"/>
+
+![](https://img.shields.io/badge/Github-@DakerHub-success.svg?style=flat-square)
+![](https://img.shields.io/badge/version-v1.1.1-success.svg?style=flat-square)
+
+[中文文档](./README_CN)
+
+Make your changes of digtals more funny. [vue-digital-transform](https://dakerhub.github.io/vue-digital-transform/)
+
+<img src="./assets/demo.gif" style="width:400px;"/>
 
 ## Install
 
@@ -21,21 +30,31 @@ import DigitalTransform from "vue-digital-transform";
 
 export default {
   components: {
-    DigitalTransform
+    DigitalTransform,
   },
   data() {
     return {
-      num: 0
+      num: 0,
     };
-  }
+  },
 };
 ```
 
 ## Config
 
-| prop                  | type          | description                                   | default   |
-| --------------------- | ------------- | --------------------------------------------- | --------- |
-| value                 | Number,String | 需要切换的数字，只能由 0-9 . , 组成           | undefined |
-| dislocation           | Boolean       | 单个数字是否过渡时间是否不一致                | false     |
-| interval              | Number        | 单个数字过渡时间（ms）                        | 500       |
-| useGrouping (v1.1.0+) | Boolean       | 是否开启分隔符(对 value 为 Number 类型的有效) | false     |
+| prop                  | type          | description                                                     | default   |
+| --------------------- | ------------- | --------------------------------------------------------------- | --------- |
+| value                 | Number,String | Digitals. Only allow [0-9.,]                                    | undefined |
+| dislocation           | Boolean       | Whether every singal digital transforms in diffrent duration.   | false     |
+| interval              | Number        | The time that transform spends.（ms）                           | 500       |
+| useGrouping (v1.1.0+) | Boolean       | Whether group the digital or not. (Only when value is pure num) | false     |
+
+## Contribution
+
+Any contribution to the code or any part of the documentation and any idea and/or suggestion are very welcome.
+
+Just pull requests!
+
+## Licence
+
+[MIT License](./LICENCE)
